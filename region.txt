@@ -1,0 +1,55 @@
+A: Banten
+AA: Magelang
+AB: Yogyakarta
+AD: Surakarta
+AE: Madiun
+AG: Kediri
+B: Jakarta
+BA: Sumatera Barat
+BB: Sumatera Utara
+BD: Bengkulu
+BE: Lampung
+BG: Sumatera Selatan
+BH: Jambi
+BK: Sumatera Utara
+BL: Aceh
+BM: Riau
+BN: Kepulauan Bangka Belitung
+BP: Kepulauan Riau
+CC: Corps Consulate
+CD: Corps Diplomatic
+D: Bandung
+DA: Kalimantan Selatan
+DB: Sulawesi Utara Daratan
+DC: Sulawesi Barat
+DD: Sulawesi Selatan
+DE: Maluku
+DG: Maluku Utara
+DH: NTT
+DK: Bali
+DM: Kalimantan Timur
+DN: Sulawesi Tengah
+DR: NTB
+DS: Papua
+DT: Sulawesi Tenggara
+E: Cirebon
+EA: NTB
+EB: NTT
+ED: Sumatra Utara
+F: Bogor
+G: Pekalongan
+H: Semarang
+K: Pati
+KB: Kalimantan Barat
+KH: Kalimantan Tengah
+KT: Kalimantan Timur
+L: Surabaya
+M: Madura
+N: Malang
+P: Besuki
+R: Banyumas
+RI: Indonesia (Pemerintah)
+S: Bojonegoro
+T: Purwakarta
+W: Sidoarjo
+Z: Garut
