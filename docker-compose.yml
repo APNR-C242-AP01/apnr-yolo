@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  jupyter:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/app  # Bind the current directory to /app in the container
+    environment:
+      - JUPYTER_TOKEN=fPR4Gopc81n9w  
+
