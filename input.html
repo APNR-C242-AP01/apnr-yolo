@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Image</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fc;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 80%;
+            max-width: 600px;
+            position: relative;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        input[type="file"] {
+            font-size: 16px;
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+            width: 100%;
+            max-width: 350px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            text-align: center;
+            margin-top: 30px;
+            display: none;
+        }
+
+        .result.visible {
+            display: block;
+        }
+
+        .result img {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain; 
+            border-radius: 10px;
+            margin-top: 20px;
+            width: 500px; 
+            height: 400px; 
+        }
+
+        .flash-message {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container"><br><br>
+        <h2>Upload Image for Processing</h2>
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div class="flash-message">
+            <ul>
+                {% for message in messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+        {% endwith %}
+
+        <form action="/process_image" method="POST" enctype="multipart/form-data">
+            <label for="image">Select an image to upload:</label>
+            <input type="file" name="image" accept="image/*" required><br><br>
+            <button type="submit">Upload Image</button>
+        </form>
+
+        {% if detected_plates %}
+        <div class="result visible">
+            <h3>Detected Plates:</h3>
+            <p>{{ detected_plates }}</p>
+            <img src="{{ url_for('output_file', filename=processed_image) }}" alt="Processed Image">
+        </div>
+        {% else %}
+        <div class="result">
+            <h3>No Image Processed Yet.</h3>
+        </div>
+        {% endif %}
+    </div>
+</body>
+
+</html>
