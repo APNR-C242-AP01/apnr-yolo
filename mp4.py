@@ -230,10 +230,10 @@ results = {}
 valid_license_plates = {}  
 mot_tracker = Sort()
 
-coco_model = YOLO('yolo11n.pt')
-license_plate_detector = YOLO('best.pt')
+coco_model = YOLO('./model/yolo11n.pt')
+license_plate_detector = YOLO('./model/best.pt')
 
-cap = cv2.VideoCapture('./video/(596) 4K Driving from Bandung to Cimahi - Bandung Raya - West Java - YouTube - Google Chrome 2024-11-28 19-11-12.mp4')
+cap = cv2.VideoCapture('sample2.mp4')
 
 vehicles = [2, 3, 5, 7]
 
